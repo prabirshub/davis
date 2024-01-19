@@ -1,0 +1,40 @@
+// Media query manager
+/*
+0 - 600px            :Phones Screen
+600px-900px          :Tablets Portrait
+900px-1200px         :Tablets Lndscape
+1200px - 1800px      :Desktop (Our normal styles apply here)
+
+
+
+$breakpoint argument choices
+
+- phone
+- tab-port
+- tab-land
+- desktop
+
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == desktop {
+    @media screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+}
